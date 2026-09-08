@@ -1,0 +1,178 @@
+:root {
+    --ink: #20201e;
+    --muted: #63615c;
+    --line: #d8d1c6;
+    --paper: #fffdf9;
+    --accent: #8b6f47;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #ebe7df;
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.55;
+}
+
+.resume-page {
+    width: min(100% - 2rem, 850px);
+    margin: 2rem auto;
+    padding: 3.5rem 4rem;
+    background: var(--paper);
+    box-shadow: 0 12px 40px rgba(37, 31, 24, 0.12);
+}
+
+.resume-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.resume-actions a,
+.resume-actions button {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.resume-actions button:hover,
+.resume-actions button:focus-visible,
+.resume-actions a:hover,
+.resume-actions a:focus-visible {
+    background: var(--accent);
+    color: white;
+}
+
+.resume-header {
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid var(--ink);
+}
+
+.resume-header h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.resume-role {
+    margin: 0.35rem 0 1rem;
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+}
+
+.resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25rem;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+}
+
+.resume-contact a {
+    color: inherit;
+}
+
+.resume-section {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.resume-section h2 {
+    margin: 0 0 0.75rem;
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.resume-section p,
+.resume-section ul {
+    margin: 0;
+}
+
+.resume-section ul {
+    padding-left: 1.2rem;
+}
+
+.resume-section li + li {
+    margin-top: 0.35rem;
+}
+
+.resume-entry {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+}
+
+.resume-entry h3,
+.resume-entry p {
+    margin: 0;
+}
+
+.resume-entry h3 {
+    font-size: 1.05rem;
+}
+
+.resume-entry p,
+.resume-entry > span {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 0.875rem;
+}
+
+.resume-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 640px) {
+    .resume-page {
+        width: 100%;
+        margin: 0;
+        padding: 2rem 1.25rem;
+    }
+
+    .resume-actions,
+    .resume-entry {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .resume-columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .resume-page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .resume-actions {
+        display: none;
+    }
+}
